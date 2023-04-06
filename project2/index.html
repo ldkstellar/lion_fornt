@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script>
+        let deg = 0;
+        setInterval(()=>{
+            deg = deg -90;
+            document.querySelector(".cube").style.transform = 'rotateX('+ deg +'deg)';
+
+        },1000)
+    </script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="cube">
+            <img src="/3d_cube/facebook.png" alt="페이스북 아이콘 이미지">
+            <img src="3d_cube/twitter.png" alt="트위터 이미지">
+            <img src="/3d_cube/youtube.png" alt="유튜브 이미지">
+            <img src="/3d_cube/instagram.png" alt="인스타그램 이미지">
+        </div>
+    </div>
+    
+</body>
+</html>
