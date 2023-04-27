@@ -7,40 +7,52 @@
    <style>
       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
-body{ background-color: black;
+body{   margin-top: 0;
+        background-color: black;
         background-image: url("img/IMG_1094.jpg");
         background-size: cover;
         font-family: 'Noto Sans KR', sans-serif;
         color: white;
-        text-align: center;
+        
 
 }
+h1{
+    margin: 3% auto;
+    height: 56px;
+    width: 80%;
+    border-radius: 10px;
+    background-color: black;
+    border: solid rgba(256,256,256, 0.1);
+    font-weight: 400;
+}
+#name {
+    margin-top: 1rem;
+    margin-left: 12rem;
+    margin-right: 12rem;
+    background-color: black;
+    border: 0.1rem solid rgba(255,255,255, 0.1);
+}
+
 .part{
+    width: 95%;
+    max-width: 600px;
     position: relative;
-    margin: 70px auto;
-    font-size: 1.3rem;
-    
-   
-    
-    
-    
+    margin: 0px auto;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color:rgba(255, 255, 255, 0.1);
 }
 
-.box{
-   
-    position: absolute;
-    top: 130%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: whitesmoke;
-    
-    
-    font-size: 1.2rem;
-    text-align: left;
-    
-    
-   
+.part img{
+    margin-top: 2rem;
+    width: 25%;
+    border-radius: 100%;
 }
+
+
+
+
+
 a{ 
    
     text-decoration: none;
@@ -49,29 +61,83 @@ a{
     
 }
 
+.col {display: flex;
+    justify-content: flex-start;
+    margin-top: 10%;
+    margin-right: 12%;
+    text-align: center;
+    
+}
+.col >div{
+    width: 90%;
+    margin-left: 15%;
+}
+.col div img{
+    width:  100%
+    
+}
+.card-text{
+    font-size: 0.em;
+}
+
+
+
+
+
 </style>
     <title>ldk_fornt</title>
 </head>
 <body>
     <div class="part">
-        <h1>LDk frontend</h1>
-        ----list----
+        <h1>What's up, people.</h1>
+        <img src="img/IMG_0416.JPG" alt="">
+        <p id="name">Leedongkyu</p>
+       
         
-    <div class="box">
-        <a href="project/index.html">1. universewebsite</a> 
-        <br>
-        <a href="project2/index.html">2. cubewebsite</a>
-        <br>
-        <a href="project3/index.html">3. dynamicwevsite</a>
- 
-    
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><a href="project/index.html">universe website</a></h5>
+                <p class="card-text">여기에 내용이 들어가지요.</p>
+                
+            </div>
+        </div>
+        <div class="card">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><a href="project2/index.html">cube website</a></a></h5>
+                <p class="card-text">여기에 내용이 들</p>
+                
+            </div>
+        </div>
+        <div class="card">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><a href="project3/index.html">dynamic website</a></h5>
+                <p class="card-text">여기에 내용이 들어가지요.</p>
+                
+            </div>
+        </div>
+        <div class="card">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><a href="project4/templated-visualize ex/index2.html">picturewebsite</a></h5>
+                <p class="card-text">여기에 내용이 들어가지요.</p>
+                
+            </div>
+        </div>
     </div>
     
+    
+    
 
-
+   
+    
         
 
-    </div>
+   
 
     
     
