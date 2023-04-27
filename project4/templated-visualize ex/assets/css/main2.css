@@ -1,0 +1,101 @@
+#wrapper{
+    border: 5px solid red;
+}
+
+#wrapper>*{
+    border: 5px solid green;
+
+}
+
+body{
+    background-image: url(../../images/bg.jpg);
+    background-size: cover;
+}
+#header{
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+#header .avatar{
+    border-radius: 100%;
+    display: inline-block;
+    padding: 0.5rem;
+    border:1px solid rgba(255, 255,255, 0.5);
+    background-color: rgba(255,255,255, 0.05);
+    margin-bottom: 2rem;
+}
+#header .avatar img{
+    border-radius: 100%;
+    display: block;
+}
+#header h1{
+    font-size: 1.5rem;
+    color: rgba(255, 255,255, 0.5);
+    font-weight: 200;
+    font-family: "Source sans pro", sans-serif;
+    margin-bottom: 1.5rem;
+}
+#header h1 strong{
+    color: white;
+    font-weight: 200;
+}
+#header h1 a{
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+}
+#header .icons li{
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 100%; border:1px solid rgba(255, 255,255, 0.5);
+    background-color: rgba(255,255,255, 0.05);
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+#header ul.icons li .label{
+display: none;
+}
+#header ul.icons{
+    padding-left: 0;
+}
+#header ul.icons li a{
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    
+}   
+#main .thumbnails{
+display: flex;
+}
+#main .thumbnails>div{
+    flex-grow: 1;
+    margin-right: 1rem;
+    margin-left: 1rem;    
+}   
+#main .thumbnails img{
+    width: 100%;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    display: block;
+}
+#main .thumbnails a{
+    margin-bottom: 1.5rem;
+    display: block;
+    
+}
+#main .thumbnails h3{
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    font-weight: 200;
+    color: white; 
+}
