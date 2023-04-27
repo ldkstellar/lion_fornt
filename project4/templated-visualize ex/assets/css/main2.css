@@ -1,21 +1,21 @@
 #wrapper{
-    border: 5px solid red;
+   
+    max-width: 100rem;
+    margin: 5rem auto;
 }
-
-#wrapper>*{
-    border: 5px solid green;
-
-}
-
 body{
     background-image: url(../../images/bg.jpg);
     background-size: cover;
+    
+    
 }
+
 #header{
     text-align: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+
 #header .avatar{
     border-radius: 100%;
     display: inline-block;
@@ -29,6 +29,8 @@ body{
     display: block;
 }
 #header h1{
+    display: block;
+    line-height: 2.3rem;
     font-size: 1.5rem;
     color: rgba(255, 255,255, 0.5);
     font-weight: 200;
@@ -44,6 +46,7 @@ body{
     text-decoration: none;
     border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
 }
+
 #header .icons li{
     display: inline-block;
     color: rgba(255, 255, 255, 0.5);
@@ -55,6 +58,10 @@ body{
     justify-content: center;
     align-items: center;
     margin-right: 1rem;
+}
+#header .icons li:hover{
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.08);
 }
 #header ul.icons li .label{
 display: none;
@@ -98,4 +105,29 @@ display: flex;
     font-size: 0.8rem;
     font-weight: 200;
     color: white; 
+}
+
+#footer{
+    
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    padding-bottom: 3rem;
+}
+#footer a{
+    
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255,255, 0.5);
+}
+#footer::before{
+    content: '';
+    display: block;
+    width: 10rem;
+    margin:2rem auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+@media(max-width:1200px){
+    #main .thumbnails{
+        display: block;
+        }
 }
