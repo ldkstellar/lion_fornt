@@ -11,9 +11,7 @@ const draged = {el:null,class:null,index:null};//드래그 객체
 setgame();
 
 
-
-
-
+//함수 정의
 function setgame(params) {
    
 tiles = createimagetiles();
@@ -30,15 +28,14 @@ shuffle(tiles).forEach(e=>{container.appendChild(e);});
 function createimagetiles(params) {
    const tempArray =[];
    const img =changeimg();
+
    Array(tilecount).fill().forEach((e,i)=>{
    const li = document.createElement("li");
    li.style.backgroundImage = img;
    li.setAttribute("draggable",true);
    li.setAttribute("data-index",i);
    li.classList.add(`list${i}`);
-   
    container.appendChild(li);
-   
    tempArray.push(li);
    
      
@@ -56,28 +53,27 @@ function createimagetiles(params) {
    }
    return array;
  }
+
  function checkstatus(params) {
    const currentList =  [...container.children];
    let checking;
    checking  = currentList.filter((child,index)=>{
      return Number(child.getAttribute("data-index")) != index;// 이런방식으로 리턴값을 사용하면 조건문을 skip을 할 수가 있다.
    });
-   console.log(checking);
-   if (checking == 0) {
+   let wrong = checking.length;
+   playtime.innerText = wrong;
+
+   if (checking.length === 0) {
       ++score;
-      playtime.innerText = `${score}`;
       container.innerHTML = "";
-      
       setgame();
-      
    }
    else if(score === 7){
       gametest.style.display ="block";
    }
  }
+
  function changeimg(){
-  
-  
    let arr = new Array();
    arr[0] = "a.jpg";
    arr[1] = "b.jpg";
@@ -87,66 +83,49 @@ function createimagetiles(params) {
    arr[5] = "f.jpg";
    arr[6] = "g.JPG";
    let rannum = Math.floor(Math.random()*7);
-   
-   
-  const bg = "url(img/" +`${arr[rannum]}`;
-return bg;
-
+   const route = "url(img/" +`${arr[rannum]}`;
+   return route;
 }
 
+// event
 
- 
- //events
  container.addEventListener("dragstart",e=>{
    if (flag === false || score === 7) {
       e.preventDefault();
-      
    }
-  else{
+   else{
    const obj = e.target; 
    draged.el = obj;
    draged.class = obj.className;
    draged.index= [...obj.parentNode.children].indexOf(obj);
-
-  }
-
-   
-   
-
-   
-});
-container.addEventListener("dragover",e =>{
-   e.preventDefault();
-   
-});
-container.addEventListener("drop",e=>{
-  const obj = e.target;// 참조형
-  
-
-  if (obj.className != draged.class) {
-
-   // 놓은거랑 드래그한거 클래스가 다를때
-   
-   let islast = false;
- 
-   let originalplace;
-   if (draged.el.nextSibling) {// 드래그 한것 의 다음 
-      originalplace = draged.el.nextSibling;
    }
-   else {
+});
+
+container.addEventListener("dragover",e =>{
+   e.preventDefault();});
+
+container.addEventListener("drop",e=>{
+  const obj = e.target;
+  if (obj.className != draged.class) {
+      let islast = false;
+      let originalplace;
+
+      if (draged.el.nextSibling) { 
+      originalplace = draged.el.nextSibling;
+      }
+   
+      else {
       originalplace = draged.el.previousSibling;
       islast =  true;
-      console.log(originalplace);
-   }
-   
-   const dragedindex= [...obj.parentNode.children].indexOf(obj);//놓은 인덱스와 동일한 부모노드의자식노드의 배열의 인덱스
-   draged.index > dragedindex ? obj.before(draged.el) : obj.after(draged.el);//obj에 앞에 넣는다.or obj 뒤에 넣는다
-   islast ? originalplace.after(obj): originalplace.before(obj);
+      }
+      const dragedindex= [...obj.parentNode.children].indexOf(obj);//놓은 인덱스와 동일한 부모노드의자식노드의 배열의 인덱스
+      draged.index > dragedindex ? obj.before(draged.el) : obj.after(draged.el);//obj에 앞에 넣는다.or obj 뒤에 넣는다
+      islast ? originalplace.after(obj): originalplace.before(obj);
       }
    checkstatus();
    });
 
-   start.addEventListener("click",e=>{
+start.addEventListener("click",e=>{
    if (flag === true) {
       flag  = false;
      start.innerText = "start";
@@ -156,6 +135,4 @@ container.addEventListener("drop",e=>{
       start.innerText ="stop";
       
    }
-
-
 });
