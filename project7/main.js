@@ -21,9 +21,9 @@ tiles = createimagetiles();
 
 setTimeout(()=>{
    
-container.innerHTML = "";
+
 shuffle(tiles).forEach(e=>{container.appendChild(e);});
-},2000);
+},3000);
 }
 
 
@@ -67,7 +67,7 @@ function createimagetiles(params) {
       ++score;
       playtime.innerText = `${score}`;
       container.innerHTML = "";
-      setTimeout(()=>{},1000);
+      
       setgame();
       
    }
