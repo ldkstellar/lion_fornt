@@ -62,10 +62,13 @@ function createimagetiles(params) {
    checking  = currentList.filter((child,index)=>{
      return Number(child.getAttribute("data-index")) != index;// 이런방식으로 리턴값을 사용하면 조건문을 skip을 할 수가 있다.
    });
-   if (checking === 0) {
+   console.log(checking);
+   if (checking == 0) {
       ++score;
       playtime.innerText = `${score}`;
-      changeimg();
+      container.innerHTML = "";
+      setTimeout(()=>{},1000);
+      setgame();
       
    }
    else if(score === 7){
@@ -95,21 +98,21 @@ return bg;
  
  //events
  container.addEventListener("dragstart",e=>{
-   if (flag === false) {
+   if (flag === false || score === 7) {
       e.preventDefault();
       
    }
-   else if (score === 7) {
-      e.preventDefault();
-   }
-
+  else{
    const obj = e.target; 
    draged.el = obj;
    draged.class = obj.className;
    draged.index= [...obj.parentNode.children].indexOf(obj);
 
+  }
+
    
-   //draged.index = e.target.parentNode.children;
+   
+
    
 });
 container.addEventListener("dragover",e =>{
@@ -122,25 +125,28 @@ container.addEventListener("drop",e=>{
 
   if (obj.className != draged.class) {
 
-   // 드래그한거랑 놓은 클래스가 다를때
-   let originalplace ;//
-   let islast = false;//
-   if (draged.el.nextsibling) {
+   // 놓은거랑 드래그한거 클래스가 다를때
+   
+   let islast = false;
+ 
+   let originalplace;
+   if (draged.el.nextSibling) {// 드래그 한것 의 다음 
       originalplace = draged.el.nextSibling;
    }
    else {
       originalplace = draged.el.previousSibling;
       islast =  true;
+      console.log(originalplace);
    }
+   
    const dragedindex= [...obj.parentNode.children].indexOf(obj);//놓은 인덱스와 동일한 부모노드의자식노드의 배열의 인덱스
    draged.index > dragedindex ? obj.before(draged.el) : obj.after(draged.el);//obj에 앞에 넣는다.or obj 뒤에 넣는다
    islast ? originalplace.after(obj): originalplace.before(obj);
       }
    checkstatus();
-   }
-);
+   });
 
-start.addEventListener("click",e=>{
+   start.addEventListener("click",e=>{
    if (flag === true) {
       flag  = false;
      start.innerText = "start";
@@ -148,7 +154,7 @@ start.addEventListener("click",e=>{
    else{
       flag = true;
       start.innerText ="stop";
-      console.log(flag);
+      
    }
 
 
