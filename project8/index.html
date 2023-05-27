@@ -28,67 +28,25 @@
     
     document.querySelector('button').addEventListener('click',function name(params) {
         let cnt = 0;
-        if (input[0].value === answer[0]) {
-            input[0].style.background = 'green';
+        for (let index = 0; index < 6; index++) {
+            if (input[index].value === answer[index]) {
+            input[index].style.background = 'green';
             
             ++cnt;
-            console.log(cnt);
+            
             
         }
-        else if(answer.includes(input[0].value)){
-            input[0].style.background = "yellow";
-            ++cnt; 
+        else if(answer.includes(input[index].value)){
+            input[index].style.background = "yellow";
+            
         }
+        else {
+            input[index].style.background = "grey";
+        }
+            
+        }
+       
         
-        if (input[1].value === answer[1]) {
-            input[1].style.background = 'green';
-            ++cnt;
-        }
-        else if(answer.includes(input[1].value)){
-            input[1].style.background = "yellow";
-            
-        }
-        
-        if (input[2].value === answer[2]) {
-            input[2].style.background = 'green';
-            ++cnt;
-
-           
-        }
-        else if(answer.includes(input[2].value)){
-            input[2].style.background = "yellow";
-        }
-
-        if (input[3].value === answer[3]) {
-            input[3].style.background = 'green';
-            ++cnt;
-
-            
-        }
-        else if(answer.includes(input[3].value)){
-            input[3].style.background = "yellow";
-        }
-
-        if (input[4].value === answer[4]) {
-            input[4].style.background = 'green';
-            ++cnt;
-
-           
-        }
-        else if(answer.includes(input[0].value)){
-            input[4].style.background = "yellow";
-        }
-
-        if (input[5].value === answer[5]) {
-            input[5].style.background = 'green';
-            ++cnt;
-
-            
-        }
-        else if(answer.includes(input[5].value)){
-            input[5].style.background = "yellow";
-        }
-         
         if (cnt === 6) {
             comment.style.display = "block";
         }
