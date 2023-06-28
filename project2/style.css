@@ -12,18 +12,18 @@ body{
     height: 100vh; 
 }
 .container{
-    perspective: 1000px;
+    perspective: 1000px; /*원근법이라는 뜻이다.  사용하지 않으면 z축의 원근감을 느낄 수 없다.*/
 }
 .cube{
     width: 128px;
     height: 128px;
-    transform-style: preserve-3d;
-    transform: rotateX(90deg);
-    transition: all 1.5s;
+    transform-style: preserve-3d;/*3차원으로 렌더링*/
+    transform: rotateX(0deg); /*초기 각도이다. */
+    transition: all 1.5s /*변화라는 뜻 all로 적용하면 모든 좌표 다 변화 시킬 수 있음 */
 }
 
 .cube img{
-    position: absolute;
+    position: absolute; 
     top: 0;
     left: 0;
 }
